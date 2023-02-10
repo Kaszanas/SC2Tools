@@ -4,3 +4,6 @@
 [submodule "SC2DatasetPreparator"]
 	path = SC2DatasetPreparator
 	url = https://github.com/Kaszanas/SC2DatasetPreparator
+[submodule "SC2MapLocaleExtractor"]
+	path = SC2MapLocaleExtractor
+	url = https://github.com/Kaszanas/SC2MapLocaleExtractor
