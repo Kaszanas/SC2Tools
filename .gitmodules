@@ -1,0 +1,3 @@
+[submodule "SC2InfoExtractorGo"]
+	path = SC2InfoExtractorGo
+	url = https://github.com/Kaszanas/SC2InfoExtractorGo
