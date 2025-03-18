@@ -1,3 +1,6 @@
 [submodule "SC2InfoExtractorGo"]
 	path = SC2InfoExtractorGo
 	url = https://github.com/Kaszanas/SC2InfoExtractorGo
+[submodule "SC2AnonServerPy"]
+	path = SC2AnonServerPy
+	url = https://github.com/Kaszanas/SC2AnonServerPy
