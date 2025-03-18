@@ -4,3 +4,6 @@
 [submodule "SC2AnonServerPy"]
 	path = SC2AnonServerPy
 	url = https://github.com/Kaszanas/SC2AnonServerPy
+[submodule "DatasetPreparator"]
+	path = DatasetPreparator
+	url = https://github.com/Kaszanas/DatasetPreparator
