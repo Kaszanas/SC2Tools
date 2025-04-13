@@ -7,3 +7,6 @@
 [submodule "DatasetPreparator"]
 	path = DatasetPreparator
 	url = https://github.com/Kaszanas/DatasetPreparator
+[submodule "SC2_Datasets"]
+	path = SC2_Datasets
+	url = https://github.com/Kaszanas/SC2_Datasets
