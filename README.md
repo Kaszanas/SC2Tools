@@ -5,4 +5,6 @@ This repository contains tools used for working with files derived from the Star
 Due to the character of the tooling spanning multiple programming languages, each of the tools is included as a git submodule.
 For further usage instructions please refer directly to the submodules.
 
-Each of the repositories (submodules) in this repository contains a separate license.
+> [!NOTE]
+> - Each of the repositories (submodules) contains a separate license.
+> - Please refer to the respective submodule for its usage instructions.
