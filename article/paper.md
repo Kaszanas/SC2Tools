@@ -1,18 +1,29 @@
 ---
+title: "SC2Tools: StarCraft II Toolset and Dataset API"
+tags:
+  - esport
+  - data processing
+  - toolset
+  - dataset preparation
+
 authors:
   - name: Andrzej Białecki
+    orcid: 0000-0003-3668-4638
     affiliation: '1'
 
   - name: Piotr Białecki
+    orcid: 0009-0003-1185-1441
     affiliation: '2'
 
   - name: Piotr Sowiński
+    orcid: 0000-0002-2543-9461
     affiliation: '1, 4'
 
   - name: Mateusz Budziak
     affiliation: '2'
 
   - name: Jan Gajewski
+    orcid: 0000-0002-2146-6198
     affiliation: '3'
 
 
@@ -25,28 +36,31 @@ affiliations:
     name: Józef Piłsudski University of Physical Education in Warsaw, Poland
   - index: 4
     name: NeverBlink, Poland
+
+date: 09 May 2025
+bibliography: paper.bib
 ---
 
 
 
 # Introduction and Background
 
-Computer games as fully controlled simulated environments were used in major scientific works that showcased the application of Reinforcement Learning (RL). As such, computer games can be viewed as one of the many components of major breakthroughs and advancements in RL applications [@Szita2012RLGames,@Samsuden2019RLGames,@LanctotEtAl2019OpenSpiel,@Shao2019RLSurvey,@Jayaramireddy2023RLSurvey,@Vinyals2019,@Wurman2022].
+Computer games as fully controlled simulated environments were used in major scientific works that showcased the application of Reinforcement Learning (RL). As such, computer games can be viewed as one of the many components of major breakthroughs and advancements in RL applications [@Szita2012RLGames;@Samsuden2019RLGames;@LanctotEtAl2019OpenSpiel;@Shao2019RLSurvey;@Jayaramireddy2023RLSurvey;@Vinyals2019;@Wurman2022].
 
-Despite heightened interest in research on gaming and esports, there are limited high-level libraries and tools made for rapid experimentation in some game titles. Researchers from various research disciplines have shown their interest in exploring gaming and esports, including: (1) psychology [@Campbell2018], (2) computer science [@Rashid2020,@Yuan2021ActorCritic], (3) education [@Jensen2024,@Jenny2021], (4) medical sciences [@Krarup2020109344], and others [@Holden2017Law,Nagorsky2020].
+Despite heightened interest in research on gaming and esports, there are limited high-level libraries and tools made for rapid experimentation in some game titles. Researchers from various research disciplines have shown their interest in exploring gaming and esports, including: (1) psychology [@Campbell2018], (2) computer science [@Rashid2020;@Yuan2021ActorCritic], (3) education [@Jensen2024;@Jenny2021], (4) medical sciences [@Krarup2020109344], and others [@Holden2017Law;Nagorsky2020].
 The ability to tie these topics with the in-game data cannot be overstated.
 
-When such software is available, it is often hard to use for less technically proficient researchers. Data parsing libraries are prevalent in computer games, such as Counter-Strike [@AWPYXeno2020,ClarityGitHub], Rocket&nbsp;League [@URLBoxcars2016], Dota&nbsp;2 [@OpenDotaGitHub,@ClarityGitHub], and finally in StarCraft&nbsp;2 [@URLBlizzardS2ClientProto,@URLS2Prot2016,@GitHubSC2Reader].
+When such software is available, it is often hard to use for less technically proficient researchers. Data parsing libraries are prevalent in computer games, such as Counter-Strike [@AWPYXeno2020;ClarityGitHub], Rocket&nbsp;League [@URLBoxcars2016], Dota&nbsp;2 [@OpenDotaGitHub;@ClarityGitHub], and finally in StarCraft&nbsp;2 [@URLBlizzardS2ClientProto;@URLS2Prot2016;@GitHubSC2Reader].
 
-Esports can be treated as a subset of gaming with additional requirements for players, such as tournament presence, organized play, training, and professionalization [@Formosa2022]. The study of esports is multidisciplinary in nature [@Brock2023Interdisciplinary,@Pizzo2022Interdisciplinary]. Due to the growing academic interest in the area of gaming and esports [@Yamanaka2021Review,@Reitman2020Review,@Tang2023Review,@Bialecki2024Review], it is key to provide tools for researchers capable of simplifying the process of acquiring large datasets efficiently, not only for authors interested in the area of computer science [@Ferenczi2024sc2_serizlizer,@SmerdovLoLDataset2021].
+Esports can be treated as a subset of gaming with additional requirements for players, such as tournament presence, organized play, training, and professionalization [@Formosa2022]. The study of esports is multidisciplinary in nature [@Brock2023Interdisciplinary;@Pizzo2022Interdisciplinary]. Due to the growing academic interest in the area of gaming and esports [@Yamanaka2021Review;@Reitman2020Review;@Tang2023Review;@Bialecki2024Review], it is key to provide tools for researchers capable of simplifying the process of acquiring large datasets efficiently, not only for authors interested in the area of computer science [@Ferenczi2024sc2_serizlizer;@SmerdovLoLDataset2021].
 
-In case of our implementation, we focus on solving problems within the StarCraft&nbsp;2 (SC2) infrastructure ecosystem. StarCraft&nbsp;2 is a real-time strategy game developed by Blizzard Entertainment. The game is known as one of the most prominent real-time strategy (RTS) esports titles [@Tyreal2020,Dal2020]. It is also characterized by its fast-paced gameplay and a high skill ceiling [@Migliore2021]. These attributes make for a great environment for testing various AI agents [@Ma2024LLMStarCraft2,@Vinyals2019,@Samvelyan2019SMAC,@Pearce2022CSGO]. Moreover, research in StarCraft&nbsp;2 is not limited to AI agents -- there are efforts to analyze the game from various perspectives and provide insights that can assist players in their gameplay [@URLSC2AICoach2022LLM,@URLSc2replaystats].
+In case of our implementation, we focus on solving problems within the StarCraft&nbsp;2 (SC2) infrastructure ecosystem. StarCraft&nbsp;2 is a real-time strategy game developed by Blizzard Entertainment. The game is known as one of the most prominent real-time strategy (RTS) esports titles [@Tyreal2020;Dal2020]. It is also characterized by its fast-paced gameplay and a high skill ceiling [@Migliore2021]. These attributes make for a great environment for testing various AI agents [@Ma2024LLMStarCraft2,@Vinyals2019;@Samvelyan2019SMAC;@Pearce2022CSGO]. Moreover, research in StarCraft&nbsp;2 is not limited to AI agents -- there are efforts to analyze the game from various perspectives and provide insights that can assist players in their gameplay [@URLSC2AICoach2022LLM;@URLSc2replaystats].
 
 Our software collection is an open-source implementation of data extraction, and data interfacing tools for StarCraft&nbsp;2. We solve the problem of ease of access to the data encoded in files with ".SC2Replay" extension by using an open-source file extractor for proprietary MoPAQ (MPQ) file format. From this point on, we will refer to the MPQ files with the ".SC2Replay" extension as SC2Replay files.
 
 So far, our software was leveraged in preparation of major datasets: "SC2ReSet" [@Bialecki2022ReSetZenodo] and "SC2EGSet" [@Bialecki2023EGSetZenodo] with an accompanying peer-reviewed and published Data Descriptor article [@Bialecki2023SC2EGSet]. The output of our software was used in varying contexts indirectly. authors cited our work, some of them following the general flow of our exploration [@Kim2024]. Others put emphasis on statistical calculation within esports landscape [@Dupuy2024]. Finally authors describe our work in surveys of related work when working in another games [@Johar2024].
 
-Our solution uses the official StarCraft 2 replay file format specification provided via Blizzard Entertainment GitHub repository [@URLBlizzards2protocol2013]. Specifically, in "SC2InfoExtractorGo", we extend the community-built Golang implementation of the parser [@URLS2Prot2016,@URLMPQ2017]. The output of our software pipeline is a fully prepared dataset, ready for use with our extension of PyTorch [@PyTorch2019] and PyTorch Lightning interfaces [@PyTorch_Lightning_2019]. Our goal was to lower the technical knowledge required to obtain data from in-game replays.
+Our solution uses the official StarCraft 2 replay file format specification provided via Blizzard Entertainment GitHub repository [@URLBlizzards2protocol2013]. Specifically, in "SC2InfoExtractorGo", we extend the community-built Golang implementation of the parser [@URLS2Prot2016;@URLMPQ2017]. The output of our software pipeline is a fully prepared dataset, ready for use with our extension of PyTorch [@PyTorch2019] and PyTorch Lightning interfaces [@PyTorch_Lightning_2019]. Our goal was to lower the technical knowledge required to obtain data from in-game replays.
 
 # Software Description
 
@@ -77,7 +91,7 @@ In the context of our work, this submodule is responsible for preparing director
 
 ### SC2InfoExtractorGo
 
-The SC2InfoExtractorGo as a submodule is a tool responsible for extracting the data from SC2Replay files, it depends on previously published open-source lower-level libraries [@URLS2Prot2016,@URLMPQ2017]. The tool is written in Golang and is shipped as a binary file (release), and as a Docker image via DockerHub. A simplified depiction of the data extraction is available on \autoref{fig:file_processing_sc2infoextractorgo}.
+The SC2InfoExtractorGo as a submodule is a tool responsible for extracting the data from SC2Replay files, it depends on previously published open-source lower-level libraries [@URLS2Prot2016;@URLMPQ2017]. The tool is written in Golang and is shipped as a binary file (release), and as a Docker image via DockerHub. A simplified depiction of the data extraction is available on \autoref{fig:file_processing_sc2infoextractorgo}.
 
 ![Pictorial representation of the "SC2InfoExtractorGo" functionality [@Bialecki_2021_SC2InfoExtractorGo]. Replays contain the events which happened during gameplay (blue background), our implementations extracts this data and outputs it for further analysis by the user (orange background). \label{fig:file_processing_sc2infoextractorgo}](server_to_json.pdf)
 
@@ -168,17 +182,17 @@ After extracting the data from SC2Replay files, any further processing, and expe
 
 ![Pictorial representation of code used to load a single replay, as defined in [@bialecki_2022_sc2datasets]. \label{fig:single_json}](loading_replay_data.png)
 
-![Example usage of the PyTorch [@PyTorch2019] dataset interface as defined in [@bialecki_2022_sc2datasets]. \fig:pytorch_dataset_custom](custom_pytorch_dataset_loading.png)
+![Example usage of the PyTorch [@PyTorch2019] dataset interface as defined in [@bialecki_2022_sc2datasets]. \label{fig:pytorch_dataset_custom}](custom_pytorch_dataset_loading.png)
 
 # Potential Impact
 
-There exist many implementations built for the purpose of parsing replay files [@ZenodoSC2Reader]. These tools and libraries require expert programming skills to extract and interact with the resulting data. Many research approaches involve scientists that may not posses such expert knowledge in programming, but nonetheless interested in investigating esports (e.g., in psychology, biomechanics, social sciences and humanities -- SSH, and others) [@Kegelaers2025,@Dupuy2025,@Donghee2020]. Lowering the technical overhead needed to interact with in-game data can open gaming and esports to researchers with various non-technical backgrounds. Furthermore, integrating SSH scientists in the research process is not only a requirement in some funding programs, but also a practical necessity, if one aims to conduct socially responsible studies [@graf2019bringing,@sonetti2020only].
+There exist many implementations built for the purpose of parsing replay files [@ZenodoSC2Reader]. These tools and libraries require expert programming skills to extract and interact with the resulting data. Many research approaches involve scientists that may not posses such expert knowledge in programming, but nonetheless interested in investigating esports (e.g., in psychology, biomechanics, social sciences and humanities -- SSH, and others) [@Kegelaers2025;@Dupuy2025;@Donghee2020]. Lowering the technical overhead needed to interact with in-game data can open gaming and esports to researchers with various non-technical backgrounds. Furthermore, integrating SSH scientists in the research process is not only a requirement in some funding programs, but also a practical necessity, if one aims to conduct socially responsible studies [@graf2019bringing;@sonetti2020only].
 
 Before introducing our software, users were bound to write their own tools extracting the data from StarCraft 2 replay files. Our solution outputs easy-to-use JSON files adhering to a specific, well-documented schema definition [https://sc2-datasets.readthedocs.io/en/latest/autoapi/index.html](https://sc2-datasets.readthedocs.io/en/latest/autoapi/index.html). Additionally, the data extraction toolset efficiently leverages modern multi-core processors (using Golang goroutines), making the process of data extraction faster. This has real implications on day-to-day research, as it allows for faster experimentation and iteration on one's methods.
 
 Within the intended user group, the software was created to assist with the process of StarCraft 2 data processing. Mainly, the software fulfilled the research needs of our team and other collaborating research teams, which led to processing and creating a dataset [@Bialecki2023SC2EGSet]. Additionally, an API interface was created to load and work with the data in PyTorch [@PyTorch2019] and PyTorch Lightning [@PyTorch_Lightning_2019].
 
-Due to the End User License Agreement (EULA) provisions specified by the game publisher (Blizzard), the commercial use of the extracted game data directly is limited. Nonetheless, one can extract valuable insights from the data and transfer them to the industry in a manner compliant with the EULA. In the past, research conducted on StarCraft&nbsp;2 data has yielded fruitful ventures in online tooling [@URLSc2replaystats,@URLSpawningTool,@URLSC2Revealed,@URLAligulac], and research [@Vinyals2019,@Ma2024LLMStarCraft2,@Samvelyan2019SMAC,@Ferenczi2024sc2_serizlizer].
+Due to the End User License Agreement (EULA) provisions specified by the game publisher (Blizzard), the commercial use of the extracted game data directly is limited. Nonetheless, one can extract valuable insights from the data and transfer them to the industry in a manner compliant with the EULA. In the past, research conducted on StarCraft&nbsp;2 data has yielded fruitful ventures in online tooling [@URLSc2replaystats;@URLSpawningTool;@URLSC2Revealed;@URLAligulac]; and research [@Vinyals2019;@Ma2024LLMStarCraft2;@Samvelyan2019SMAC;@Ferenczi2024sc2_serizlizer].
 
 # Conclusions
 
