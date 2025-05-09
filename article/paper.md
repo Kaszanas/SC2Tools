@@ -104,11 +104,11 @@ One of our solutions, SC2_Datasets [@bialecki_2022_sc2datasets] interfaces with 
 
 Users have the ability to extend our solution and apply it to their data via the PyTorch [@PyTorch2019] and PyTorch Lightning [@PyTorch_Lightning_2019] interfaces.
 
-## {SC2AnonServerPy}
+## SC2AnonServerPy
 
 In the process of extracting the information from the StarCraft&nbsp;2 replays, the users have the ability to choose if nicknames of the players should be anonymized with a separate tool "SC2AnonServerPy" [@Bialecki_2021_SC2AnonServerPy], this functionality may be key for laboratories that wish to share their datasets with a wider community.
 
-## {Software Functionalities}
+## Software Functionalities
 
 Main functionality of this software collection introduce a repeatable way of working with StarCraft 2 data for research and data analysis. Users need to verify if their specific use case is permitted by the Blizzard End User License Agreement (EULA). Our software package includes file-wrangling tools such as: flattening nested directory structure, data-parallel replay file parsing (extraction), data cleanup, exporting replay data to JSON, and finally data loading into PyTorch [@PyTorch2019] and PyTorch Lightning [@PyTorch_Lightning_2019]. We have developed a modular system of tools solving specific issues of data processing with expandability in mind.
 
