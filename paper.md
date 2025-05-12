@@ -38,7 +38,7 @@ affiliations:
     name: NeverBlink, Poland
 
 date: 09 May 2025
-bibliography: paper.bib
+bibliography: ./article/paper.bib
 ---
 
 
@@ -72,7 +72,7 @@ In case of developing future tools, deprecating or improving the existing implem
 
 Tools and scripts in our repository have singular responsibilities. Each of our submodules fulfills a specific part of the data processing needs within the pipeline. The full pipeline in a simplified pictorial form is showcased in \autoref{fig:DatasetPipeline}. Note the distinctive steps of data pre-processing are introduced in#  "DatasetPreparator" for the Python utility scripts. Further, data processing Golang tool implementatino is explained in#  introducing the "SC2InfoExtractorGo". Finally, data modeling or post-processing tasks are introduced in#  diving deeper on "SC2_Datasets" as a Python API implementations for PyTorch [@PyTorch2019] and PyTorch Lightning [@PyTorch_Lightning_2019].
 
-![Simplified full pipeline using SC2Tools to create two datasets, "SC2ReSet" [@Bialecki2022ReSetZenodo] and "SC2EGSet" Dataset [@Bialecki2023EGSetZenodo]. Initially introduced in [@Bialecki2023SC2EGSet]. \label{fig:DatasetPipeline}](SC2Tools_Pipeline_Complete.pdf)
+![Simplified full pipeline using SC2Tools to create two datasets, "SC2ReSet" [@Bialecki2022ReSetZenodo] and "SC2EGSet" Dataset [@Bialecki2023EGSetZenodo]. Initially introduced in [@Bialecki2023SC2EGSet]. \label{fig:DatasetPipeline}](./article/SC2Tools_Pipeline_Complete.pdf)
 
 ### DatasetPreparator
 
@@ -93,7 +93,7 @@ In the context of our work, this submodule is responsible for preparing director
 
 The SC2InfoExtractorGo as a submodule is a tool responsible for extracting the data from SC2Replay files, it depends on previously published open-source lower-level libraries [@URLS2Prot2016;@URLMPQ2017]. The tool is written in Golang and is shipped as a binary file (release), and as a Docker image via DockerHub. A simplified depiction of the data extraction is available on \autoref{fig:file_processing_sc2infoextractorgo}.
 
-![Pictorial representation of the "SC2InfoExtractorGo" functionality [@Bialecki_2021_SC2InfoExtractorGo]. Replays contain the events which happened during gameplay (blue background), our implementations extracts this data and outputs it for further analysis by the user (orange background). \label{fig:file_processing_sc2infoextractorgo}](server_to_json.pdf)
+![Pictorial representation of the "SC2InfoExtractorGo" functionality [@Bialecki_2021_SC2InfoExtractorGo]. Replays contain the events which happened during gameplay (blue background), our implementations extracts this data and outputs it for further analysis by the user (orange background). \label{fig:file_processing_sc2infoextractorgo}](./article/server_to_json.pdf)
 
 ### SC2_Datasets
 
@@ -128,7 +128,7 @@ Within "DatasetPreparator" [@Bialecki_2022_SC2DatasetPreparator] there are multi
 
 Due to the complex nature of our software, and number of operations that are run for every replay, we have created multiple functions that define the steps of the data extraction process with "SC2InfoExtractorGo". Function that is ran for every replay is showcased in \autoref{fig:file_processing_pseudocode}.
 
-![Golang-inspired pseudocode algorithm for processing a single replay file using SC2InfoExtractorGo [@Bialecki_2021_SC2InfoExtractorGo]. \label{fig:file_processing_pseudocode}](file_processing_pipeline.png)
+![Golang-inspired pseudocode algorithm for processing a single replay file using SC2InfoExtractorGo [@Bialecki_2021_SC2InfoExtractorGo]. \label{fig:file_processing_pseudocode}](./article/file_processing_pipeline.png)
 
 After the initial processing with a pre-defined pipeline, the output JSON files can be loaded with any programming language capable of reading this format for further processing. In our case this is showcased in "SC2_Datasets" repository, building on top of the JSON files an API for rapid experimentation with ML and AI methods using PyTorch [@PyTorch2019] and PyTorch Lightning [@PyTorch_Lightning_2019].
 
@@ -180,9 +180,9 @@ In some cases, the user might want to anonymize the data due to the privacy, eth
 
 After extracting the data from SC2Replay files, any further processing, and experiments are possible with the "SC2_Datasets" Python package [@bialecki_2022_sc2datasets]. Loading a single JSON file following the structure defined in the "SC2_Datasets" parser can be seen on \autoref{fig:single_json}. To load the output of a processed dataset that exists either on the drive or online, the user should initialize a class as visualized on \autoref{fig:pytorch_dataset_custom}. Additionally, PyTorch Lightning [@PyTorch_Lightning_2019] datamodule interfaces can be used as they are included in the API Note that the users have full control and customizability of the code. In case of our implementations for "SC2EGSet" we provide an interface to use the data. Similar approach can be used with data from other sources, as long as the data is formatted in a way that is compatible with the "SC2_Datasets" parser.
 
-![Pictorial representation of code used to load a single replay, as defined in [@bialecki_2022_sc2datasets]. \label{fig:single_json}](loading_replay_data.png)
+![Pictorial representation of code used to load a single replay, as defined in [@bialecki_2022_sc2datasets]. \label{fig:single_json}](./article/loading_replay_data.png)
 
-![Example usage of the PyTorch [@PyTorch2019] dataset interface as defined in [@bialecki_2022_sc2datasets]. \label{fig:pytorch_dataset_custom}](custom_pytorch_dataset_loading.png)
+![Example usage of the PyTorch [@PyTorch2019] dataset interface as defined in [@bialecki_2022_sc2datasets]. \label{fig:pytorch_dataset_custom}](./article/custom_pytorch_dataset_loading.png)
 
 # Potential Impact
 
