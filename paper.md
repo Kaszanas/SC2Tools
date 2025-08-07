@@ -85,16 +85,6 @@ Users have the ability to extend our solution and apply it to their data via the
 Main functionality of this software collection introduce a repeatable way of working with StarCraft 2 data for research and data analysis. Users need to verify if their specific use case is permitted by the Blizzard End User License Agreement (EULA). Our software package includes file-wrangling tools such as: flattening nested directory structure, data-parallel replay file parsing (extraction), data cleanup, exporting replay data to JSON, and finally data loading into PyTorch [@PyTorch2019] and PyTorch Lightning [@PyTorch_Lightning_2019]. We have developed a modular system of tools solving specific issues of data processing with expandability in mind.
 
 
-# Usage Information
-
-## Running Experiments With SC2_Datasets
-
-After extracting the data from SC2Replay files, any further processing, and experiments are possible with the "SC2_Datasets" Python package [@bialecki_2022_sc2datasets]. Loading a single JSON file following the structure defined in the "SC2_Datasets" parser can be seen on \autoref{fig:single_json}. To load the output of a processed dataset that exists either on the drive or online, the user should initialize a class as visualized on \autoref{fig:pytorch_dataset_custom}. Additionally, PyTorch Lightning [@PyTorch_Lightning_2019] datamodule interfaces can be used as they are included in the API Note that the users have full control and customizability of the code. In case of our implementations for "SC2EGSet" we provide an interface to use the data. Similar approach can be used with data from other sources, as long as the data is formatted in a way that is compatible with the "SC2_Datasets" parser.
-
-![Pictorial representation of code used to load a single replay, as defined in [@bialecki_2022_sc2datasets]. \label{fig:single_json}](./article/loading_replay_data.png)
-
-![Example usage of the PyTorch [@PyTorch2019] dataset interface as defined in [@bialecki_2022_sc2datasets]. \label{fig:pytorch_dataset_custom}](./article/custom_pytorch_dataset_loading.png)
-
 # Statement of Need
 
 The need for similar solutions is clear, output of our software was used in varying contexts, authors cited our work, some of them following the general flow of our exploration [@Kim2024;@Ferenczi2024sc2_serizlizer]. Within the intended user group, the software was created to assist with the process of StarCraft 2 data processing. Mainly, the software fulfilled the research needs of our team and other collaborating research teams, which led to processing and creating a dataset [@Bialecki2023SC2EGSet]. Additionally, an API interface was created to load and work with the data in PyTorch [@PyTorch2019] and PyTorch Lightning [@PyTorch_Lightning_2019].
