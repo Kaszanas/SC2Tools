@@ -56,7 +56,7 @@ Esports can be treated as a subset of gaming with additional requirements for pl
 
 We focus on solving problems within the StarCraft&nbsp;2 (SC2) infrastructure ecosystem. We solve the problem of ease of access to the data encoded in files with ".SC2Replay". StarCraft&nbsp;2 is a real-time strategy game developed by Blizzard Entertainment. The game is known as one of the most prominent real-time strategy (RTS) esports titles [@Tyreal2020;Dal2020]. It is also characterized by its fast-paced gameplay and a high skill ceiling [@Migliore2021]. These attributes make for a great environment for testing various AI agents [@Ma2024LLMStarCraft2,@Vinyals2019;@Samvelyan2019SMAC;@Pearce2022CSGO]. Moreover, research in StarCraft&nbsp;2 is not limited to AI agents -- there are efforts to analyze the game from various perspectives and provide insights that can assist players in their gameplay [@URLSC2AICoach2022LLM;@URLSc2replaystats].
 
-So far, our software was leveraged in preparation of major datasets: "SC2ReSet" [@Bialecki2022ReSetZenodo] and "SC2EGSet" [@Bialecki2023EGSetZenodo] with an accompanying peer-reviewed and published Data Descriptor article [@Bialecki2023SC2EGSet]. The output of our software was used in varying contexts indirectly. authors cited our work, some of them following the general flow of our exploration [@Kim2024]. Our goal for this work was to lower the technical knowledge required to obtain data from in-game replays.
+So far, our software was leveraged in preparation of major datasets: "SC2ReSet" [@Bialecki2022ReSetZenodo] and "SC2EGSet" [@Bialecki2023EGSetZenodo] with an accompanying peer-reviewed and published Data Descriptor article [@Bialecki2023SC2EGSet]. Our goal for this work was to lower the technical knowledge required to obtain data from in-game replays.
 
 # Software Description
 
@@ -95,22 +95,19 @@ After extracting the data from SC2Replay files, any further processing, and expe
 
 ![Example usage of the PyTorch [@PyTorch2019] dataset interface as defined in [@bialecki_2022_sc2datasets]. \label{fig:pytorch_dataset_custom}](./article/custom_pytorch_dataset_loading.png)
 
-# Potential Impact
+# Statement of Need
+
+The need for similar solutions is clear, output of our software was used in varying contexts, authors cited our work, some of them following the general flow of our exploration [@Kim2024;@Ferenczi2024sc2_serizlizer]. Within the intended user group, the software was created to assist with the process of StarCraft 2 data processing. Mainly, the software fulfilled the research needs of our team and other collaborating research teams, which led to processing and creating a dataset [@Bialecki2023SC2EGSet]. Additionally, an API interface was created to load and work with the data in PyTorch [@PyTorch2019] and PyTorch Lightning [@PyTorch_Lightning_2019].
 
 There exist many implementations built for the purpose of parsing replay files [@ZenodoSC2Reader]. These tools and libraries require expert programming skills to extract and interact with the resulting data. Many research approaches involve scientists that may not posses such expert knowledge in programming, but nonetheless interested in investigating esports (e.g., in psychology, biomechanics, social sciences and humanities -- SSH, and others) [@Kegelaers2025;@Dupuy2025;@Donghee2020]. Lowering the technical overhead needed to interact with in-game data can open gaming and esports to researchers with various non-technical backgrounds. Furthermore, integrating SSH scientists in the research process is not only a requirement in some funding programs, but also a practical necessity, if one aims to conduct socially responsible studies [@graf2019bringing;@sonetti2020only].
 
-Before introducing our software, users were bound to write their own tools extracting the data from StarCraft 2 replay files. Our solution outputs easy-to-use JSON files adhering to a specific, well-documented schema definition [https://sc2-datasets.readthedocs.io/en/latest/autoapi/index.html](https://sc2-datasets.readthedocs.io/en/latest/autoapi/index.html). Additionally, the data extraction toolset efficiently leverages modern multi-core processors (using Golang goroutines), making the process of data extraction faster. This has real implications on day-to-day research, as it allows for faster experimentation and iteration on one's methods.
-
-Within the intended user group, the software was created to assist with the process of StarCraft 2 data processing. Mainly, the software fulfilled the research needs of our team and other collaborating research teams, which led to processing and creating a dataset [@Bialecki2023SC2EGSet]. Additionally, an API interface was created to load and work with the data in PyTorch [@PyTorch2019] and PyTorch Lightning [@PyTorch_Lightning_2019].
-
-In the past, research conducted on StarCraft&nbsp;2 data has yielded fruitful ventures in online tooling [@URLSc2replaystats;@URLSpawningTool;@URLSC2Revealed;@URLAligulac]; and research [@Vinyals2019;@Ma2024LLMStarCraft2;@Samvelyan2019SMAC;@Ferenczi2024sc2_serizlizer].
+Before introducing our software, users were bound to write their own tools extracting the data from StarCraft 2 replay files. Our solution outputs easy-to-use JSON files adhering to a specific, well-documented schema definition [https://sc2-datasets.readthedocs.io/en/latest/autoapi/index.html](https://sc2-datasets.readthedocs.io/en/latest/autoapi/index.html). Additionally, the data extraction toolset efficiently leverages modern multi-core processors (using Golang goroutines), making the process of data extraction faster. This has real implications on day-to-day research, as it allows for faster experimentation and iteration on one's methods. Finally, In the past, research conducted on StarCraft&nbsp;2 data has yielded fruitful ventures in online tooling [@URLSc2replaystats;@URLSpawningTool;@URLSC2Revealed;@URLAligulac]; and research [@Vinyals2019;@Ma2024LLMStarCraft2;@Samvelyan2019SMAC;@Ferenczi2024sc2_serizlizer].
 
 # Conclusions
 
 We conclude that despite there being some software packages available, they often require additional programming skills and knowledge. Our solution provides a simple to use executable file and a set of scripts to work with StarCraft 2 data. Additionally, we conclude that our software solves a very specific infrastructure problem that is prevalent in the gaming and esports research on StarCraft&nbsp;2.
 
 In its current version our toolset "SC2Tools" is capable of simplifying the work associated with handling files used to create StarCraft&nbsp;2 datasets. We are planning to keep updating the software to include more tools, features, and functionalities. Additionally, due to the capability of our software to output JSON files, We claim full interoperability with other replay parsing solutions as long as they keep the same output format.
-
 
 # Conflict of Interest
 
