@@ -9,7 +9,7 @@ tags:
 authors:
   - name: Andrzej Białecki
     orcid: 0000-0003-3668-4638
-    affiliation: '1'
+    affiliation: '1, 5'
 
   - name: Piotr Białecki
     orcid: 0009-0003-1185-1441
@@ -31,11 +31,13 @@ affiliations:
   - index: 1
     name: Warsaw University of Technology, Poland
   - index: 2
-    name: Independent Researcher
-  - index: 3
     name: Józef Piłsudski University of Physical Education in Warsaw, Poland
-  - index: 4
+  - index: 3
     name: NeverBlink, Poland
+  - index: 4
+    name: HealthyGG
+  - index: 5
+    name: Independent Researcher
 
 date: 09 May 2025
 bibliography: ./article/paper.bib
@@ -47,7 +49,7 @@ bibliography: ./article/paper.bib
 
 Computer games as fully controlled simulated environments were used in major scientific works that showcased the application of Reinforcement Learning (RL). As such, computer games can be viewed as one of the many components of major breakthroughs and advancements in RL applications [@Szita2012RLGames;@Samsuden2019RLGames;@LanctotEtAl2019OpenSpiel;@Shao2019RLSurvey;@Jayaramireddy2023RLSurvey;@Vinyals2019;@Wurman2022].
 
-Despite heightened interest in research on gaming and esports, there are limited high-level libraries and tools made for rapid experimentation in some game titles. Researchers from various research disciplines have shown their interest in exploring gaming and esports, including: (1) psychology [@Campbell2018], (2) computer science [@Rashid2020;@Yuan2021ActorCritic], (3) education [@Jensen2024;@Jenny2021], (4) medical sciences [@Krarup2020109344], and others [@Holden2017Law;Nagorsky2020].
+Despite heightened interest in research on gaming and esports, there are limited high-level libraries and tools made for rapid experimentation in some game titles. Researchers from various research disciplines have shown their interest in exploring gaming and esports, including: (1) psychology [@Campbell2018], (2) computer science [@Rashid2020;@Yuan2021ActorCritic], (3) education [@Jensen2024;@Jenny2021], (4) medical sciences [@Krarup2020109344], and others [@Holden2017Law;@Nagorsky2020].
 The ability to tie these topics with the in-game data cannot be overstated.
 
 When such software is available, it is often hard to use for less technically proficient researchers. Data parsing libraries are prevalent in computer games, such as Counter-Strike [@AWPYXeno2020;@ClarityGitHub], Rocket&nbsp;League [@URLBoxcars2016], Dota&nbsp;2 [@OpenDotaGitHub;@ClarityGitHub], and finally in StarCraft&nbsp;2 [@URLBlizzardS2ClientProto;@URLS2Prot2016;@GitHubSC2Reader].
