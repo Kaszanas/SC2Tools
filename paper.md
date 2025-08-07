@@ -9,22 +9,22 @@ tags:
 authors:
   - name: Andrzej Białecki
     orcid: 0000-0003-3668-4638
-    affiliation: '1, 5'
+    affiliation: '1, 4'
 
   - name: Piotr Białecki
     orcid: 0009-0003-1185-1441
-    affiliation: '2'
+    affiliation: '5'
 
   - name: Piotr Sowiński
     orcid: 0000-0002-2543-9461
-    affiliation: '1, 4'
+    affiliation: '1, 3'
 
   - name: Mateusz Budziak
-    affiliation: '2'
+    affiliation: '5'
 
   - name: Jan Gajewski
     orcid: 0000-0002-2146-6198
-    affiliation: '3'
+    affiliation: '2'
 
 
 affiliations:
