@@ -28,6 +28,7 @@ This repository contains a comprehensive toolset for working with StarCraft II r
 The easiest way to get started is using our pre-built Docker images:
 
 1. **Pull and run DatasetPreparator (full processing pipeline):**
+   1. Run the following to see available options:
     ```bash
     docker pull kaszanas/datasetpreparator:latest
 
@@ -36,6 +37,21 @@ The easiest way to get started is using our pre-built Docker images:
     kaszanas/datasetpreparator:latest \
     python sc2egset_pipeline.py --help
     ```
+    2. Place your .SC2Replay files in a folder under `./processing/data/replays` directory. 
+       1. To run the full processing pipeline:
+        ```bash
+        docker run -it --rm \
+        -v "${PWD}\processing\data":/app/processing/data \
+        kaszanas/datasetpreparator:latest \
+        python sc2egset_pipeline.py \
+        --input_dir processing/data/replays \
+        --output_dir processing/data/output \
+        --maps_path processing/maps \
+        --n_processes 4 \
+        --force_overwrite True
+        ```
+
+To verify if everything worked correctly, check the generated logs and the `processing/data/output` directory for processed files.
 
 
 ### Installation (Without Docker)
