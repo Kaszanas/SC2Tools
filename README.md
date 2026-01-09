@@ -27,7 +27,7 @@ This repository contains a comprehensive toolset for working with StarCraft II r
 
 The easiest way to get started is using our pre-built Docker images:
 
-0. Collect your .SC2Replay files into a replaypack, for example: `replaypack_1/*.SC2Replay`.
+0. Collect your .SC2Replay files into a replaypack, for example: `replaypack_1/*.SC2Replay`. If you do not have any replays, and you wish to run the following example, you can download some replaypacks from [SC2ReSet HuggingFace](https://huggingface.co/datasets/Kaszanas/SC2ReSet) or [SC2ReSet Zenodo](https://doi.org/10.5281/zenodo.5575796).
 1. **Pull and run DatasetPreparator (full processing pipeline):**
    1. Run the following to see available options:
     ```bash
