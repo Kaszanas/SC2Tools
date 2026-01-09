@@ -27,6 +27,7 @@ This repository contains a comprehensive toolset for working with StarCraft II r
 
 The easiest way to get started is using our pre-built Docker images:
 
+0. Collect your .SC2Replay files into a replaypack, for example: `replaypack_1/*.SC2Replay`.
 1. **Pull and run DatasetPreparator (full processing pipeline):**
    1. Run the following to see available options:
     ```bash
@@ -37,21 +38,25 @@ The easiest way to get started is using our pre-built Docker images:
     kaszanas/datasetpreparator:latest \
     python sc2egset_pipeline.py --help
     ```
-    2. Place your .SC2Replay files in a folder under `./processing/data/replays` directory. 
-       1. To run the full processing pipeline:
+    2. Place your replaypack directories in `./processing/data/replays` directory. For example:
+        ```
+        ./processing/data/replays/replaypack_1/*.SC2Replay
+        ./processing/data/replays/replaypack_2/*.SC2Replay
+        ``` 
+       1. To run the full processing pipeline (as in SC2ReSet and SC2EGSet datasets), execute:
         ```bash
         docker run -it --rm \
-        -v "${PWD}\processing\data":/app/processing/data \
+        -v "${PWD}/processing/data":/app/processing/data \
         kaszanas/datasetpreparator:latest \
         python sc2egset_pipeline.py \
-        --input_dir processing/data/replays \
-        --output_dir processing/data/output \
+        --input_path processing/data/replays \
+        --output_path processing/data/output \
         --maps_path processing/maps \
         --n_processes 4 \
         --force_overwrite True
         ```
 
-To verify if everything worked correctly, check the generated logs and the `processing/data/output` directory for processed files.
+To verify if everything worked correctly, check the generated logs and the `processing/data/output` directory for processed files. The `directory_flattener` directory should contain the structure as in the input directory, but with a single level directories containing raw `.SC2Replay` files and a mapping from the old directory structure to the filenames `processed_mapping.json`. Moreover, the `sc2egset_replaypack_processor` directory should contain the output from SC2InfoExtractorGo ran with the same arguments as the SC2EGSet dataset processing. Finally `SC2ReSet` and `SC2EGSet` directory should contain the raw replay files as organized in the respective datasets.
 
 
 ### Installation (Without Docker)
