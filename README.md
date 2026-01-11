@@ -11,6 +11,8 @@ This repository contains a comprehensive toolset for working with StarCraft II r
 - **SC2AnonServerPy**: Provides anonymization gRPC service for player data and chat messages, works with SC2InfoExtractorGo.
 - **SC2_Datasets**: Python library for loading and working with processed SC2 datasets.
 
+For a comprehensive information on each tool, please refer to their individual `README.md` files.
+
 ### Prerequisites
 
 - Docker (recommended) or:

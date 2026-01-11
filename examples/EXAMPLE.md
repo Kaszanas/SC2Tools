@@ -144,6 +144,8 @@ if __name__ == "__main__":
 
 ## Next Steps
 
+To see all of the possibilities of the SC2Tools, please refer to the tools respective documentations:
+
 - Explore the [SC2_Datasets documentation](SC2_Datasets/README.md) for advanced data analysis.
 - Check the [DatasetPreparator tools](DatasetPreparator/README.md) for large-scale dataset preparation.
 - Review the [SC2AnonServerPy documentation](SC2AnonServerPy/README.md) for anonymization options.
