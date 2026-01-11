@@ -68,8 +68,31 @@ processing/
 
 ## Using the Dataset API
 
-Once you have processed JSON files, you can use the SC2_Datasets Python library:
+Examples of using the `SC2_Datasets` library to read and analyze the processed JSON files are provided in the [SC2_Datasets README](SC2_Datasets/README.md) and its supporting documentation.
 
+Once you have processed JSON files:
+
+1. You can load the processed dataset using one of the PyTorch dataset classes provided in the `SC2_Datasets` library. For example, to load the data you just processed, you can use the `SC2DirectoryDataset` as shown in [example_directory_dataset.py](examples/example_directory_dataset.py):
+
+```python
+from pathlib import Path
+
+from sc2_datasets.torch.datasets.sc2_dataset_directory import SC2DatasetDirectory
+
+if __name__ == "__main__":
+    unpack_dir = Path("./processing/sc2infoextractorgo_output/package_0").resolve()
+
+    directory_dataset = SC2DatasetDirectory(directory=unpack_dir)
+
+    for idx in range(len(directory_dataset)):
+        replay_data = directory_dataset[idx]
+        print(
+            f"Replay metadata: {replay_data.metadata.gameVersion=} {replay_data.metadata.mapName=},"
+        )
+
+```
+
+2. If you wish to work with the JSON files directly, you can use the SC2_Datasets Python library to load raw JSON files. This allows to work with the data programmatically [example_load_raw.py](examples/example_load_raw.py):
 
 ```
 # Create a virtual environment
@@ -90,7 +113,6 @@ from pathlib import Path
 
 from sc2_datasets.replay_data.sc2_replay_data import SC2ReplayData
 
-
 if __name__ == "__main__":
     unpack_dir = Path("./processing/sc2infoextractorgo_output/package_0").resolve()
 
@@ -104,6 +126,7 @@ if __name__ == "__main__":
             f"Replay metadata: {replay_data.metadata.gameVersion=} {replay_data.metadata.mapName=},"
         )
 ```
+
 
 ## Troubleshooting
 
