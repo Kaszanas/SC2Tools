@@ -36,7 +36,7 @@ The easiest way to get started is using our pre-built Docker images:
     docker pull kaszanas/datasetpreparator:latest
 
     docker run -it --rm \
-    -v "${PWD}\processing":/app/processing \
+    -v "${PWD}/processing":/app/processing \
     kaszanas/datasetpreparator:latest \
     python sc2egset_pipeline.py --help
     ```
