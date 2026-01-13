@@ -81,6 +81,10 @@ The SC2InfoExtractorGo as a submodule is a tool responsible for extracting the d
 
 ![Pictorial representation of the "SC2InfoExtractorGo" functionality [@Bialecki_2021_SC2InfoExtractorGo]. Replays contain the events which happened during gameplay (blue background), our implementations extracts this data and outputs it for further analysis by the user (orange background). \label{fig:file_processing_sc2infoextractorgo}](./article/server_to_json.pdf)
 
+### SC2AnonServerPy
+
+In the process of extracting the information from the StarCraft~2 replays, the users have the ability to choose if nicknames of the players should be anonymized with a separate tool "SC2AnonServerPy" [@Bialecki_2021_SC2AnonServerPy], this functionality may be key for laboratories that wish to share their datasets with a wider community. The "SC2AnonServerPy" repository contains a gRPC [@gRPC2014] service that acquires a weakly anonymized unique identifier for the players that participated in the game. Other implementations and tools may be added in the future to further anonymize the data.
+
 ### SC2_Datasets
 
 One of our solutions, SC2_Datasets [@bialecki_2022_sc2datasets] interfaces with the JSON files produced by the SC2InfoExtractorGo [@Bialecki_2021_SC2InfoExtractorGo]. This includes all of the classes and methods required to load a single JSON, a collection of JSON files (representing a replaypack), and finally a way of loading an entire dataset (a collection of replaypacks). The pictorial representation of the "SC2_Datasets" functionality is presented on \autoref{fig:LoadingDataToPyTorch}.
