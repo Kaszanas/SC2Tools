@@ -126,3 +126,5 @@ We wish to confirm that there are no known conflicts of interest associated with
 # Acknowledgements
 
 We would like to acknowledge various contributions by the members of the technical and research community, with special thanks to: Timo Ewalds (DeepMind, Google), Anthony Martin (Sc2ReplayStats), and András Belicza for assisting with our technical questions.
+
+# References
