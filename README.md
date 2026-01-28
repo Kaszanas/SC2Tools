@@ -82,10 +82,10 @@ To verify if everything worked correctly, check the generated logs and the `proc
 
 Each tool has its own comprehensive documentation:
 
-- [SC2InfoExtractorGo Documentation](SC2InfoExtractorGo/README.md)
-- [DatasetPreparator Documentation](DatasetPreparator/README.md)
-- [SC2AnonServerPy Documentation](SC2AnonServerPy/README.md)
-- [SC2_Datasets Documentation](SC2_Datasets/README.md)
+- [SC2InfoExtractorGo Documentation](https://github.com/Kaszanas/SC2InfoExtractorGo/blob/dev/README.md)
+- [DatasetPreparator Documentation](https://github.com/Kaszanas/DatasetPreparator/blob/dev/README.md)
+- [SC2AnonServerPy Documentation](https://github.com/Kaszanas/SC2AnonServerPy/blob/dev/README.md)
+- [SC2_Datasets Documentation](https://github.com/Kaszanas/SC2_Datasets/blob/dev/README.md)
 
 ## Contributing
 
