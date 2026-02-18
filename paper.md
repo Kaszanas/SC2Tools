@@ -47,9 +47,7 @@ bibliography: ./article/paper.bib
 
 Computer games, as fully controlled simulated environments, have been utilized in significant scientific studies demonstrating the application of Reinforcement Learning (RL). Gaming and esports are key areas influenced by the application of Artificial Intelligence (AI) and Machine Learning (ML) solutions at scale. Tooling simplifies scientific workloads and is essential for developing the gaming and esports research area.
 
-In this work, we present "SC2Tools", a toolset containing multiple submodules responsible for working with, and producing larger datasets. StarCraft&nbsp;2 is a known real-time strategy game (RTS) and one of the long-standing esports titles. We provide a modular structure of the implemented tooling, leaving room for future extensions where needed. Additionally, some of the tools are not StarCraft&nbsp;2 exclusive and can be used with other types of data for dataset creation. We provide PyTorch and PyTorch Lightning application programming interface (API) for easy access to the data.
-
-We conclude that alleviating the burden of data collection, preprocessing, and custom code development is essential for less technically proficient researchers to engage in the growing gaming and esports research area. Finally, our solution provides some foundational work toward normalizing experiment workflow in StarCraft&nbsp;2
+In this work, we present "SC2Tools", a toolset containing multiple submodules responsible for working with, and producing larger datasets. StarCraft&nbsp;2 is a known real-time strategy game (RTS) and one of the long-standing esports titles. We provide a modular structure of the implemented tooling, leaving room for future extensions where needed. Additionally, some of the tools are not StarCraft&nbsp;2 exclusive and can be used with other types of data for dataset creation. We provide PyTorch and PyTorch Lightning application programming interface (API) for easy access to the data. Finally, our solution provides some foundational work toward normalizing experiment workflow in StarCraft&nbsp;2
 
 # Introduction and Background
 
