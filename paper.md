@@ -113,7 +113,7 @@ Before introducing our software, users were bound to write their own tools extra
 
 We conclude that despite there being some software packages available, they often require additional programming skills and knowledge. Our solution provides a simple to use executable file and a set of scripts to work with StarCraft&nbsp;2 data. Additionally, we conclude that our software solves a very specific infrastructure problem that is prevalent in the gaming and esports research on StarCraft&nbsp;2.
 
-In its current version our toolset "SC2Tools" is capable of simplifying the work associated with handling files used to create StarCraft&nbsp;2 datasets. We are planning to keep updating the software to include more tools, features, and functionalities. Additionally, due to the capability of our software to output JSON files, We claim full interoperability with other replay parsing solutions as long as they keep the same output format.
+In its current version our toolset "SC2Tools" is capable of simplifying the work associated with handling files used to create StarCraft&nbsp;2 datasets. We are planning to keep updating the software to include more tools, features, and functionalities. Additionally, due to the capability of our software to output JSON files. We claim full interoperability with other replay parsing solutions as long as they keep the same output format.
 
 # Conflict of Interest
 
