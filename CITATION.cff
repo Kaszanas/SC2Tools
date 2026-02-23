@@ -1,0 +1,48 @@
+cff-version: "1.2.0"
+authors:
+- family-names: Białecki
+  given-names: Andrzej
+  orcid: "https://orcid.org/0000-0003-3668-4638"
+- family-names: Białecki
+  given-names: Piotr
+  orcid: "https://orcid.org/0009-0003-1185-1441"
+- family-names: Sowiński
+  given-names: Piotr
+  orcid: "https://orcid.org/0000-0002-2543-9461"
+- family-names: Budziak
+  given-names: Mateusz
+- family-names: Gajewski
+  given-names: Jan
+  orcid: "https://orcid.org/0000-0002-2146-6198"
+doi: 10.5281/zenodo.18726432
+message: If you use this software, please cite our article in the
+  Journal of Open Source Software.
+preferred-citation:
+  authors:
+  - family-names: Białecki
+    given-names: Andrzej
+    orcid: "https://orcid.org/0000-0003-3668-4638"
+  - family-names: Białecki
+    given-names: Piotr
+    orcid: "https://orcid.org/0009-0003-1185-1441"
+  - family-names: Sowiński
+    given-names: Piotr
+    orcid: "https://orcid.org/0000-0002-2543-9461"
+  - family-names: Budziak
+    given-names: Mateusz
+  - family-names: Gajewski
+    given-names: Jan
+    orcid: "https://orcid.org/0000-0002-2146-6198"
+  date-published: 2026-02-23
+  doi: 10.21105/joss.08889
+  issn: 2475-9066
+  issue: 118
+  journal: Journal of Open Source Software
+  publisher:
+    name: Open Journals
+  start: 8889
+  title: "SC2Tools: StarCraft II Toolset and Dataset API"
+  type: article
+  url: "https://joss.theoj.org/papers/10.21105/joss.08889"
+  volume: 11
+title: "SC2Tools: StarCraft II Toolset and Dataset API"
