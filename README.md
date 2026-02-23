@@ -1,3 +1,5 @@
+[![JOSS Status](https://joss.theoj.org/papers/10.21105/joss.08889/status.svg)](https://joss.theoj.org/papers/10.21105/joss.08889)
+
 # SC2Tools: StarCraft II Toolset and Dataset API
 
 This repository contains a comprehensive toolset for working with StarCraft II replay files and datasets. The tools span multiple programming languages and are included as git submodules for easy management and development.
